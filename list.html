@@ -60,7 +60,7 @@
 		<li><a href="list.html?k=hot">热卖</a></li>
 		<li><a href="list.html?k=recmd">推荐</a></li>
 		<li><a href="list.html?k=spp">特价</a></li>
-	</ul>	
+	</ul>
 </div>
 
 <div class="am-container am-g">
@@ -187,6 +187,11 @@
 				var product = data[k];
 				var templ = juicer($('#mt-goods-item-template').html(), product);
 				$('#goods-search-list').append(templ);
+        $('.detail').click(function(){
+					var url = $(this).attr('url');
+					var gid = $(this).attr('gid');
+					location = url + '?gid=' + gid;
+				})
 			}
 		})
   });
